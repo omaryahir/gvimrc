@@ -2,9 +2,8 @@
 
 Useful commands:
 
-# MacOS Finder 
-
-### Cmd+Shift+g --> open quick text input in folder/file open 
+#### MacOS Finder -> Open Folder 
+Cmd+Shift+g --> open quick text input in folder/file open 
 
 ### VIM 
 switch panel positions --> ctrl+w+x
