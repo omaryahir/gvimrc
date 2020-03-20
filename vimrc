@@ -1,10 +1,14 @@
+"Enable click mouse on terminal
+set mouse=a
+
+"Defint tab spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
+colorscheme desert
 "colorscheme default
 "colorscheme murphy
-colorscheme desert
 "colorscheme elflord
 "colorscheme pablo
 "colorscheme monokai
@@ -16,11 +20,22 @@ colorscheme desert
 "Activar los colores de fondo
 set t_Co=256
 
+"[y] --> yank to clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
+set clipboard=unnamed
 
 
+set nowrap
 syntax on
 
-" La mejor status line https://github.com/bling/vim-airline
+"AirLine
+"My Favorite Status line: https://github.com/bling/vim-airline
 "Under .vim directory, plugin, doc and autoload directories should go. I suspect vim-airline-master directory went under .vim directory and that is why the plugin is not getting set up.
 "https://powerline.readthedocs.org/en/latest/fontpatching.html
 "Install home brew http://brew.sh/index_es.html
@@ -31,16 +46,17 @@ set laststatus=2
 "This line enable airline's tab
 let g:airline#extensions#tabline#enabled = 1
 
+"GIT branch -- via -- https://github.com/tpope/vim-fugitive
+let g:airline#extensions#branch#enabled = 1
+
 "tab options
 let g:airline#extensions#tabline#fnamemod = ':t' 
 map <C-t> :tabnew<CR> 
 map <C-h> :tabnext<CR> 
 map <C-g> :tabprevious<CR> 
-"let g:airline#extensions#tabline#left_sep = ' ' 
-"let g:airline#extensions#tabline#left_alt_sep = ' '
 
 
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 "let g:airline_theme='murmur'
 "let g:airline_theme='light'
 "let g:airline_theme='jellybeans'
@@ -48,10 +64,12 @@ let g:airline_powerline_fonts=0
 "let g:airline_theme='bubblegum"
 
 "symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline#extensions#tabline#left_sep = '▛'
+let g:airline#extensions#tabline#left_alt_sep = '▛'
+let g:airline_left_sep = '▛'
+let g:airline_left_alt_sep = '▛'
+let g:airline_right_sep = '▜'
+let g:airline_right_alt_sep = '▜'
 
 "hi StatusLine ctermfg=black ctermbg=lightgray
 "hi StatusLine ctermbg=gray ctermfg=black
@@ -85,9 +103,21 @@ set foldcolumn=2
 "hi Folded  ctermfg=white
 "hi FoldColumn ctermfg=white
 
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
+"CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+"let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_user_command = 'find . -name "%s"'
+let g:ctrlp_max_files=0
 
 "map <silent> <C-n> :NERDTreeToggle<CR>
+
+let g:gitgutter_override_sign_column_highlight = 0
+highlight SignColumn ctermbg=black    " terminal Vim
 
 
 "Autocomplete
