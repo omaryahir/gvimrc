@@ -1,4 +1,4 @@
-"set fullscreen
+"set fullscsreen
 
 "Ubuntu or Elementaryos
 "set guioptions -=m "hide menu
@@ -26,7 +26,7 @@ colorscheme desert "Night
 "colorscheme slate
 
 "Background OSX only maybe
-set transparency=10
+set transparency=3
 
 "Font -> color and background color
 "highlight Normal guifg=#444444 guibg=#FFFFFF "Morning
@@ -81,6 +81,7 @@ hi StatusLineNC guifg=#777777 guibg=#4a4a4a "Night
 
 "Vertical Line Split
 set fillchars+=vert:\ 
+highlight VertSplit guibg=#222222 guifg=#222222
 
 "Git
 "set statusline=%#ErrorMsg#%{GitBranchInfoString}%#StatusLine# 
