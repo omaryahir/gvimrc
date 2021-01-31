@@ -15,6 +15,8 @@ Plug 'junegunn/fzf', { 'do':  { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 
+"Plug 'xolox/vim-session'
+
 
 " Initialize plugin system
 call plug#end()
@@ -23,12 +25,12 @@ call plug#end()
 
 "NERDTree
 nnoremap <C-S-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
-nnoremap <C-S-b> :NERDTreeToggle <CR>
+nnoremap <C-S-b> :NERDTreeToggle<CR>
 " Open the existing NERDTree on each new tab
 autocmd BufWinEnter * silent NERDTreeMirror
 "Exit vim if NERDTree is the last pane
-autocmd BufEnter * if tabpagenr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-	\ quit | endif
+"autocmd BufEnter * if tabpagenr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+"	\ quit | endif
 
 "Vim Airline
 let g:airline_powerline_fonts=0
@@ -46,7 +48,8 @@ nnoremap <C-S-F> :Rg<CR>
 
 "Ack
 let g:ackprg = "rg --vimrep"
-
+" this require to install:
+" $ brew install ripgrep
 
 "language code syntax
 syntax on
