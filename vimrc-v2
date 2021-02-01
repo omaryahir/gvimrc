@@ -62,7 +62,7 @@ set clipboard=unnamed
 
 "Numbers
 set number
-hi lineNr guifg=#555555 ctermfg=239
+hi lineNr guifg=#555555 ctermfg=243
 
 "Tab bar colors
 hi Title ctermfg=White ctermbg=Black
