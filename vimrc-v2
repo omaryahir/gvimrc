@@ -32,16 +32,6 @@ autocmd BufWinEnter * silent NERDTreeMirror
 "autocmd BufEnter * if tabpagenr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
 "	\ quit | endif
 
-"Vim Airline
-let g:airline_powerline_fonts=0
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#left_sep = '▛'
-let g:airline#extensions#tabline#left_alt_sep = '▛'
-let g:airline_left_sep = '▛'
-let g:airline_left_alt_sep = '▛'
-let g:airline_right_sep = '▜'
-let g:airline_right_alt_sep = '▜'
-
 "fzf
 nnoremap <C-S-P> :FZF<CR>
 nnoremap <C-S-F> :Rg<CR>
@@ -52,7 +42,12 @@ let g:ackprg = "rg --vimrep"
 " $ brew install ripgrep
 
 "language code syntax
-syntax on
+syntax enable
+"Colors
+" color desert
+" great color file from here: https://github.com/sickill/vim-monokai
+colorscheme monokai 
+
 
 "Define tab spaces
 set tabstop=4
@@ -64,9 +59,6 @@ set mouse=a
 
 "Enable shared clipboard with OSX
 set clipboard=unnamed 
-
-"Colors
-color desert
 
 "Numbers
 set number
@@ -90,8 +82,18 @@ set anti gfn=Ubuntu\ Mono:h16 "gvim
 
 set nowrap
 
-
-
 "Git
 highlight SignColumn guibg=#222222 ctermbg=235
+
+
+"Vim Airline
+let g:airline_powerline_fonts=0
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#left_sep = '▛'
+let g:airline#extensions#tabline#left_alt_sep = '▛'
+let g:airline_left_sep = '▛'
+let g:airline_left_alt_sep = '▛'
+let g:airline_right_sep = '▜'
+let g:airline_right_alt_sep = '▜'
+let g:airline_theme='wombat'
 
