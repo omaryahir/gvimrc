@@ -49,6 +49,12 @@ syntax enable
 colorscheme monokai 
 
 
+" colorscheme nehalfdark
+" colorscheme onehalflight
+" https://github.com/sonph/onehalf/tree/master/vim/colors
+" copy this into ~/.vim/colors
+
+
 "Define tab spaces
 set tabstop=4
 set shiftwidth=4
